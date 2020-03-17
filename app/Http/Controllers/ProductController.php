@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Http\Requests\CreateProductRequest;
+use App\Http\Requests\UpdateProductRequest;
 use App\Product;
 use Illuminate\Http\Request;
 
@@ -13,7 +15,7 @@ class ProductController extends Controller {
 	 * @return \Illuminate\Http\Response
 	 */
 	public function index() {
-		$products = Product::all()->where('is_active', 1);
+		$products = Product::all();
 		return view('admin.product.index', compact('products'));
 	}
 
@@ -33,7 +35,7 @@ class ProductController extends Controller {
 	 * @param  \Illuminate\Http\Request  $request
 	 * @return \Illuminate\Http\Response
 	 */
-	public function store(Request $request) {
+	public function store(CreateProductRequest $request) {
 		Product::create($request->all());
 
 		return redirect()->route('products.index')
@@ -68,7 +70,7 @@ class ProductController extends Controller {
 	 * @param  \App\Product  $product
 	 * @return \Illuminate\Http\Response
 	 */
-	public function update(Request $request, Product $product) {
+	public function update(UpdateProductRequest $request, Product $product) {
 		$product->update($request->all());
 
 		return redirect()->route('products.index')
