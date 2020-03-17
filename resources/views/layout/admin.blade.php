@@ -85,25 +85,25 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/tables/oder.html" class="nav-link">
+                <a href="{{route('bills.index')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Oders</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/tables/product.html" class="nav-link">
+                <a href="{{route('products.index')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Products</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/tables/data.html" class="nav-link">
+                <a href="{{route('users.index')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Users</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/tables/comment.html" class="nav-link">
+                <a href="{{route('comments.index')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Comments</p>
                 </a>

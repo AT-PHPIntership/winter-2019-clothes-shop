@@ -30,6 +30,16 @@
               <div class="card-header">
                 <h3 class="card-title">Edit</h3>
               </div>
+              @if ($errors->any())
+                <div class="alert alert-danger">
+                <strong>Warning!</strong> Please check your input code<br><br>
+                <ul>
+                  @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                  @endforeach
+                </ul>
+                </div>
+              @endif
               <!-- /.card-header -->
               <!-- form start -->
               <form action="{{ route('products.update', $product->id) }}" method="POST" role="form">

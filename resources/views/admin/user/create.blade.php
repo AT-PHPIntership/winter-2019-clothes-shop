@@ -7,12 +7,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>General Form</h1>
+            <h1>New User</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">General Form</li>
+              <li class="breadcrumb-item active">New user</li>
             </ol>
           </div>
         </div>
@@ -28,35 +28,50 @@
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Quick Example</h3>
+                <h3 class="card-title">New</h3>
               </div>
+              @if ($errors->any())
+                <div class="alert alert-danger">
+                <strong>Warning!</strong> Please check your input code<br><br>
+                <ul>
+                  @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                  @endforeach
+                </ul>
+                </div>
+              @endif
               <!-- /.card-header -->
               <!-- form start -->
-              <form role="form">
+              <form action="{{ route('users.store') }}" method="POST" role="form">
+                @csrf
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                    <label for="exampleInputEmail1">Name</label>
+                    <input type="text" name="name" class="form-control" placeholder="Name">
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    <label for="exampleInputEmail1">Email</label>
+                    <input type="text" name="email" class="form-control" placeholder="Email">
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputFile">File input</label>
-                    <div class="input-group">
-                      <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="exampleInputFile">
-                        <label class="custom-file-label" for="exampleInputFile"></label>
-                      </div>
-                      <div class="input-group-append">
-                        <span class="input-group-text" id="">Upload</span>
-                      </div>
-                    </div>
+                    <label for="exampleInputEmail1">Address</label>
+                    <input type="text" name="address" class="form-control" placeholder="Address">
                   </div>
-                  <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Phone</label>
+                    <input type="text" name="phone" class="form-control" placeholder="Phone">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Username</label>
+                    <input type="text" name="username" class="form-control" placeholder="username">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Password</label>
+                    <input type="text" name="password" class="form-control" placeholder="Password">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Role</label>
+                    <input type="text" name="role" class="form-control" placeholder="Role">
                   </div>
                 </div>
                 <!-- /.card-body -->
