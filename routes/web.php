@@ -11,6 +11,14 @@
 |
  */
 
-Route::get('/', function () {
-	return view('welcome');
-});
+Route::get('/home', function () {
+	return view('admin.home');
+})->name('home');
+
+Route::resource('bills', 'BillController');
+Route::resource('billdetails', 'BillDetailController');
+Route::resource('categories', 'CategoryController');
+Route::resource('comments', 'CommentController');
+Route::resource('images', 'ImageController');
+Route::resource('products', 'ProductController');
+Route::resource('users', 'UserController');
