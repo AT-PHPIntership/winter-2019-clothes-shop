@@ -7,7 +7,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Show Product</h1>
+            <h1>Show Category</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -32,50 +32,23 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="{{ route('products.update', $product->id) }}" method="POST" role="form">
+              <form action="{{ route('categories.update', $category->id) }}" method="POST" role="form">
                 @csrf
                 @method('PUT')
                 <div class="card-body">
                   <div class="form-group">
                     <label for="exampleInputEmail1">Id</label>
-                    <p>{{ $product->id }}</p>
+                    <p>{{ $category->id }}</p>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Name</label>
-                    <p>{{ $product->name }}</p>
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Category ID</label>
-                    <p>{{ $product->category_id }}</p>
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Size</label>
-                    <p>{{ $product->size }}</p>
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Color</label>
-                    <p>{{ $product->color }}</p>
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Quantity</label>
-                    <p>{{ $product->quantity }}</p>
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Price</label>
-                    <p>{{ $product->price }}</p>
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Promotion Price</label>
-                    <p>{{ $product->promotion_price }}</p>
+                    <p>{{ $category->name }}</p>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Description</label>
-                    <p>{{ $product->description }}</p>
+                    <p>{{ $category->description }}</p>
                   </div>
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Is Active</label>
-                    <p>{{ $product->is_active }}</p>
-                  </div>
+
               </form>
             </div>
             <!-- /.card -->
