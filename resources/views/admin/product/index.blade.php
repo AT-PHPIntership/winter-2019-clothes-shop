@@ -54,7 +54,7 @@
                       <td>{{ $item->quantity }}</td>
                       <td>{{ $item->price }}</td>
                       <td>{{ $item->promotion_price }}</td>
-                      <td>{{ $item->descrpition}}</td>
+                      <td>{{ $item->description}}</td>
                       <td>
                         <form action="{{ route('products.destroy',$item->id) }}" method="POST">
 
