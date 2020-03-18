@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateUserRequest;
+use App\Http\Requests\UpdateUserRequest;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
@@ -68,7 +69,7 @@ class UserController extends Controller {
 	 * @param  int  $id
 	 * @return \Illuminate\Http\Response
 	 */
-	public function update(CreateUserRequest $request, User $user) {
+	public function update(UpdateUserRequest $request, User $user) {
 		if ($request->password != '') {
 			$password = bcrypt($request->input('password'));
 			$data = $request->all();

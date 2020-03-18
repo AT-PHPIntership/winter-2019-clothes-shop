@@ -63,8 +63,8 @@
                     <input type="text" name="phone" value="{{ $user->phone }}" class="form-control" placeholder="Phone">
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Username</label>
-                    <input type="text" name="username" value="{{ $user->username }}" class="form-control" placeholder="Username">
+                    <label for="exampleInputEmail1">username</label>
+                    <input type="text" name="username" value="{{ $user->username }}" class="form-control" placeholder="username">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Password</label>

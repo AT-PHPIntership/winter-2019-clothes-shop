@@ -22,10 +22,10 @@ class UpdateUserRequest extends FormRequest {
 	public function rules() {
 		return [
 			'name' => 'required|regex:/^[\pL\s\-]+$/u',
-			'email' => 'required|email|unique:users,email'
+			'email' => 'required|email|unique:users,email,' . $this->user->id,
 			'address' => 'required',
 			'phone' => 'required|regex:/[0-9]{10}/',
-			'username' => 'required|unique:users,username'
+			'username' => 'required|unique:users,username,' . $this->user->id,
 			'password' => 'required|min:6|max:20',
 			'role' => 'required',
 		];
